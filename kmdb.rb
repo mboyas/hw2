@@ -70,8 +70,41 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
+Movie.destroy_all
+Person.destroy_all
+Role.destroy_all
+
 # Generate models and tables, according to the domain model
 # TODO!
+
+# I entered into terminal:
+## rails generate model Movie
+## rails generate model Person
+## rails generate model Role
+
+# Next, I added columns into db/migrate files
+
+# Then, I executed migration by running in terminal:
+## rails db:migrate
+
+# Last, I added in relevant associations
+
+## one movie has one director
+##class Movie < ApplicationRecord
+##    belongs_to :people
+##end
+
+# each persopn can be in many movies or many roles
+##class Person < ApplicationRecord
+##    has_many :movies
+##    has_many :roles
+##end
+
+# each role has 1 person and 1 movie
+##class Role < ApplicationRecord
+##    belongs_to :people
+##    belongs_to :movies
+##end
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
