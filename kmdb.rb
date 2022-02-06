@@ -110,6 +110,84 @@ Role.destroy_all
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
+## Add people data into table
+person1 = Person.new
+person1.name = "Christian Bale"
+person1.save
+
+person2 = Person.new
+person2.name = "Michael Caine"
+person2.save
+
+person3 = Person.new
+person3.name = "Liam Neeson"
+person3.save
+
+person4 = Person.new
+person4.name = "Katie Holmes"
+person4.save
+
+person5 = Person.new
+person5.name = "Gary Oldman"
+person5.save
+
+person6 = Person.new
+person6.name = "Heath Ledger"
+person6.save
+
+person7 = Person.new
+person7.name = "Aaron Eckhart"
+person7.save
+
+person8 = Person.new
+person8.name = "Maggie Gyllenhaal"
+person8.save
+
+person9 = Person.new
+person9.name = "Tom Hardy"
+person9.save
+
+person10 = Person.new
+person10.name = "Joseph Gordon-Levitt"
+person10.save
+
+person11 = Person.new
+person11.name = "Anne Hathaway"
+person11.save
+
+person12 = Person.new
+person12.name = "Christopher Nolan"
+person12.save
+
+## Add movie data into table
+
+person = Person.where({name: "Christopher Nolan"})[0]
+movie1 = Movie.new
+movie1.title = "Batman Begins"
+movie1.year_released = 2005
+movie1.rated = "PG-13"
+movie1.director_id = person.id
+movie1.save
+
+person = Person.where({name: "Christopher Nolan"})[0]
+movie2 = Movie.new
+movie2.title = "The Dark Knight"
+movie2.year_released = 2008
+movie2.rated = "PG-13"
+movie2.director_id = person.id
+movie2.save
+
+person = Person.where({name: "Christopher Nolan"})[0]
+movie3 = Movie.new
+movie3.title = "The Dark Knight Rises"
+movie3.year_released = 2012
+movie3.rated = "PG-13"
+movie3.director_id = person.id
+movie3.save
+
+
+
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
