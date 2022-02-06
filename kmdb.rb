@@ -186,6 +186,126 @@ movie3.director_id = person.id
 movie3.save
 
 
+## Add role data into table
+person = Person.where({name: "Christian Bale"})[0]
+movie = Movie.where({title: "Batman Begins"})[0]
+role1 = Role.new
+role1.movie_id = movie.id
+role1.actor_id = person.id
+role1.character_name = "Bruce Wayne"
+role1.save
+
+person = Person.where({name: "Michael Caine"})[0]
+movie = Movie.where({title: "Batman Begins"})[0]
+role2 = Role.new
+role2.movie_id = movie.id
+role2.actor_id = person.id
+role2.character_name = "Alfred"
+role2.save
+
+person = Person.where({name: "Liam Neeson"})[0]
+movie = Movie.where({title: "Batman Begins"})[0]
+role3 = Role.new
+role3.movie_id = movie.id
+role3.actor_id = person.id
+role3.character_name = "Ra's Al Ghul"
+role3.save
+
+person = Person.where({name: "Katie Holmes"})[0]
+movie = Movie.where({title: "Batman Begins"})[0]
+role4 = Role.new
+role4.movie_id = movie.id
+role4.actor_id = person.id
+role4.character_name = "Rachel Dawes"
+role4.save
+
+person = Person.where({name: "Gary Oldman"})[0]
+movie = Movie.where({title: "Batman Begins"})[0]
+role5 = Role.new
+role5.movie_id = movie.id
+role5.actor_id = person.id
+role5.character_name = "Commissioner Gordon"
+role5.save
+
+person = Person.where({name: "Christian Bale"})[0]
+movie = Movie.where({title: "The Dark Knight", year_released: 2008})[0]
+role6 = Role.new
+role6.movie_id = movie.id
+role6.actor_id = person.id
+role6.character_name = "Bruce Wayne"
+role6.save
+
+person = Person.where({name: "Heath Ledger"})[0]
+movie = Movie.where({title: "The Dark Knight", year_released: 2008})[0]
+role7 = Role.new
+role7.movie_id = movie.id
+role7.actor_id = person.id
+role7.character_name = "Joker"
+role7.save
+
+person = Person.where({name: "Aaron Eckhart"})[0]
+movie = Movie.where({title: "The Dark Knight", year_released: 2008})[0]
+role8 = Role.new
+role8.movie_id = movie.id
+role8.actor_id = person.id
+role8.character_name = "Harvey Dent"
+role8.save
+
+person = Person.where({name: "Michael Caine"})[0]
+movie = Movie.where({title: "The Dark Knight", year_released: 2008})[0]
+role9 = Role.new
+role9.movie_id = movie.id
+role9.actor_id = person.id
+role9.character_name = "Alfred"
+role9.save
+
+person = Person.where({name: "Maggie Gyllenhaal"})[0]
+movie = Movie.where({title: "The Dark Knight", year_released: 2008})[0]
+role10 = Role.new
+role10.movie_id = movie.id
+role10.actor_id = person.id
+role10.character_name = "Rachel Dawes"
+role10.save
+
+person = Person.where({name: "Christian Bale"})[0]
+movie = Movie.where({title: "The Dark Knight Rises", year_released: 2012})[0]
+role11 = Role.new
+role11.movie_id = movie.id
+role11.actor_id = person.id
+role11.character_name = "Bruce Wayne"
+role11.save
+
+person = Person.where({name: "Gary Oldman"})[0]
+movie = Movie.where({title: "The Dark Knight Rises", year_released: 2012})[0]
+role12 = Role.new
+role12.movie_id = movie.id
+role12.actor_id = person.id
+role12.character_name = "Commissioner Gordon"
+role12.save
+
+person = Person.where({name: "Tom Hardy"})[0]
+movie = Movie.where({title: "The Dark Knight Rises", year_released: 2012})[0]
+role13 = Role.new
+role13.movie_id = movie.id
+role13.actor_id = person.id
+role13.character_name = "Bane"
+role13.save
+
+person = Person.where({name: "Joseph Gordon-Levitt"})[0]
+movie = Movie.where({title: "The Dark Knight Rises", year_released: 2012})[0]
+role14 = Role.new
+role14.movie_id = movie.id
+role14.actor_id = person.id
+role14.character_name = "John Blake"
+role14.save
+
+person = Person.where({name: "Anne Hathaway"})[0]
+movie = Movie.where({title: "The Dark Knight Rises", year_released: 2012})[0]
+role15 = Role.new
+role15.movie_id = movie.id
+role15.actor_id = person.id
+role15.character_name = "Selina Kyle"
+role15.save
 
 
 # Prints a header for the movies output
