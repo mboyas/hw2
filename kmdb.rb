@@ -83,13 +83,14 @@ Role.destroy_all
 ## rails generate model Role
 
 # Next, I added columns into db/migrate files
+## Note - I used associations in the models to ease code below, so I used person_id in my movie table and person_id in roles table to make this work correctly
 
 # Then, I executed migration by running in terminal:
 ## rails db:migrate
 
-# Last, I added in relevant associations
+# Last, I added in relevant associations, see below:
 
-## one movie has one director
+# a movie has one director
 ##class Movie < ApplicationRecord
 ##    belongs_to :person
 ##end
@@ -105,8 +106,6 @@ Role.destroy_all
 ##    belongs_to :person
 ##    belongs_to :movie
 ##end
-
-# Note - I used associations in the models to ease code below, so I used person_id in my movie table and person_id in roles table to make this work correctly
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
