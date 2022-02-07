@@ -91,7 +91,7 @@ Role.destroy_all
 
 ## one movie has one director
 ##class Movie < ApplicationRecord
-##    belongs_to :people
+##    belongs_to :person
 ##end
 
 # each persopn can be in many movies or many roles
@@ -102,9 +102,11 @@ Role.destroy_all
 
 # each role has 1 person and 1 movie
 ##class Role < ApplicationRecord
-##    belongs_to :people
-##    belongs_to :movies
+##    belongs_to :person
+##    belongs_to :movie
 ##end
+
+# Note - I used associations in the models to ease code below, so I used person_id in my movie table and person_id in roles table to make this work correctly
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
@@ -166,7 +168,7 @@ movie1 = Movie.new
 movie1.title = "Batman Begins"
 movie1.year_released = 2005
 movie1.rated = "PG-13"
-movie1.director_id = person.id
+movie1.person_id = person.id
 movie1.save
 
 person = Person.where({name: "Christopher Nolan"})[0]
@@ -174,7 +176,7 @@ movie2 = Movie.new
 movie2.title = "The Dark Knight"
 movie2.year_released = 2008
 movie2.rated = "PG-13"
-movie2.director_id = person.id
+movie2.person_id = person.id
 movie2.save
 
 person = Person.where({name: "Christopher Nolan"})[0]
@@ -182,7 +184,7 @@ movie3 = Movie.new
 movie3.title = "The Dark Knight Rises"
 movie3.year_released = 2012
 movie3.rated = "PG-13"
-movie3.director_id = person.id
+movie3.person_id = person.id
 movie3.save
 
 
@@ -191,7 +193,7 @@ person = Person.where({name: "Christian Bale"})[0]
 movie = Movie.where({title: "Batman Begins"})[0]
 role1 = Role.new
 role1.movie_id = movie.id
-role1.actor_id = person.id
+role1.person_id = person.id
 role1.character_name = "Bruce Wayne"
 role1.save
 
@@ -199,7 +201,7 @@ person = Person.where({name: "Michael Caine"})[0]
 movie = Movie.where({title: "Batman Begins"})[0]
 role2 = Role.new
 role2.movie_id = movie.id
-role2.actor_id = person.id
+role2.person_id = person.id
 role2.character_name = "Alfred"
 role2.save
 
@@ -207,7 +209,7 @@ person = Person.where({name: "Liam Neeson"})[0]
 movie = Movie.where({title: "Batman Begins"})[0]
 role3 = Role.new
 role3.movie_id = movie.id
-role3.actor_id = person.id
+role3.person_id = person.id
 role3.character_name = "Ra's Al Ghul"
 role3.save
 
@@ -215,7 +217,7 @@ person = Person.where({name: "Katie Holmes"})[0]
 movie = Movie.where({title: "Batman Begins"})[0]
 role4 = Role.new
 role4.movie_id = movie.id
-role4.actor_id = person.id
+role4.person_id = person.id
 role4.character_name = "Rachel Dawes"
 role4.save
 
@@ -223,7 +225,7 @@ person = Person.where({name: "Gary Oldman"})[0]
 movie = Movie.where({title: "Batman Begins"})[0]
 role5 = Role.new
 role5.movie_id = movie.id
-role5.actor_id = person.id
+role5.person_id = person.id
 role5.character_name = "Commissioner Gordon"
 role5.save
 
@@ -231,7 +233,7 @@ person = Person.where({name: "Christian Bale"})[0]
 movie = Movie.where({title: "The Dark Knight", year_released: 2008})[0]
 role6 = Role.new
 role6.movie_id = movie.id
-role6.actor_id = person.id
+role6.person_id = person.id
 role6.character_name = "Bruce Wayne"
 role6.save
 
@@ -239,7 +241,7 @@ person = Person.where({name: "Heath Ledger"})[0]
 movie = Movie.where({title: "The Dark Knight", year_released: 2008})[0]
 role7 = Role.new
 role7.movie_id = movie.id
-role7.actor_id = person.id
+role7.person_id = person.id
 role7.character_name = "Joker"
 role7.save
 
@@ -247,7 +249,7 @@ person = Person.where({name: "Aaron Eckhart"})[0]
 movie = Movie.where({title: "The Dark Knight", year_released: 2008})[0]
 role8 = Role.new
 role8.movie_id = movie.id
-role8.actor_id = person.id
+role8.person_id = person.id
 role8.character_name = "Harvey Dent"
 role8.save
 
@@ -255,7 +257,7 @@ person = Person.where({name: "Michael Caine"})[0]
 movie = Movie.where({title: "The Dark Knight", year_released: 2008})[0]
 role9 = Role.new
 role9.movie_id = movie.id
-role9.actor_id = person.id
+role9.person_id = person.id
 role9.character_name = "Alfred"
 role9.save
 
@@ -263,7 +265,7 @@ person = Person.where({name: "Maggie Gyllenhaal"})[0]
 movie = Movie.where({title: "The Dark Knight", year_released: 2008})[0]
 role10 = Role.new
 role10.movie_id = movie.id
-role10.actor_id = person.id
+role10.person_id = person.id
 role10.character_name = "Rachel Dawes"
 role10.save
 
@@ -271,7 +273,7 @@ person = Person.where({name: "Christian Bale"})[0]
 movie = Movie.where({title: "The Dark Knight Rises", year_released: 2012})[0]
 role11 = Role.new
 role11.movie_id = movie.id
-role11.actor_id = person.id
+role11.person_id = person.id
 role11.character_name = "Bruce Wayne"
 role11.save
 
@@ -279,7 +281,7 @@ person = Person.where({name: "Gary Oldman"})[0]
 movie = Movie.where({title: "The Dark Knight Rises", year_released: 2012})[0]
 role12 = Role.new
 role12.movie_id = movie.id
-role12.actor_id = person.id
+role12.person_id = person.id
 role12.character_name = "Commissioner Gordon"
 role12.save
 
@@ -287,7 +289,7 @@ person = Person.where({name: "Tom Hardy"})[0]
 movie = Movie.where({title: "The Dark Knight Rises", year_released: 2012})[0]
 role13 = Role.new
 role13.movie_id = movie.id
-role13.actor_id = person.id
+role13.person_id = person.id
 role13.character_name = "Bane"
 role13.save
 
@@ -295,7 +297,7 @@ person = Person.where({name: "Joseph Gordon-Levitt"})[0]
 movie = Movie.where({title: "The Dark Knight Rises", year_released: 2012})[0]
 role14 = Role.new
 role14.movie_id = movie.id
-role14.actor_id = person.id
+role14.person_id = person.id
 role14.character_name = "John Blake"
 role14.save
 
@@ -303,7 +305,7 @@ person = Person.where({name: "Anne Hathaway"})[0]
 movie = Movie.where({title: "The Dark Knight Rises", year_released: 2012})[0]
 role15 = Role.new
 role15.movie_id = movie.id
-role15.actor_id = person.id
+role15.person_id = person.id
 role15.character_name = "Selina Kyle"
 role15.save
 
@@ -318,10 +320,8 @@ puts ""
 
 movies = Movie.all
 for movie in movies
-    director = Person.where({ id: movie.director_id })[0]
-    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{director.name}"
+    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{movie.person.name}"
 end
-
 
 # Prints a header for the cast output
 puts ""
@@ -334,7 +334,5 @@ puts ""
 
 roles = Role.all
 for role in roles
-    movie = Movie.where({ id: role.movie_id })[0]
-    actor = Person.where({ id: role.actor_id })[0]
-    puts "#{movie.title} #{actor.name} #{role.character_name}"
+    puts "#{role.movie.title} #{role.person.name} #{role.character_name}"
 end
