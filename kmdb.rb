@@ -111,7 +111,8 @@ Role.destroy_all
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
-## Add people data into table
+# Add people data into table
+
 person1 = Person.new
 person1.name = "Christian Bale"
 person1.save
@@ -160,7 +161,7 @@ person12 = Person.new
 person12.name = "Christopher Nolan"
 person12.save
 
-## Add movie data into table
+# Add movie data into table
 
 person = Person.where({name: "Christopher Nolan"})[0]
 movie1 = Movie.new
@@ -186,8 +187,8 @@ movie3.rated = "PG-13"
 movie3.person_id = person.id
 movie3.save
 
+# Add role data into table
 
-## Add role data into table
 person = Person.where({name: "Christian Bale"})[0]
 movie = Movie.where({title: "Batman Begins"})[0]
 role1 = Role.new
