@@ -320,7 +320,7 @@ puts ""
 
 movies = Movie.all
 for movie in movies
-    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{movie.person.name}"
+    puts "#{movie.title.ljust(21)} #{movie.year_released} #{movie.rated} #{movie.person.name}"
 end
 
 # Prints a header for the cast output
@@ -334,5 +334,5 @@ puts ""
 
 roles = Role.all
 for role in roles
-    puts "#{role.movie.title} #{role.person.name} #{role.character_name}"
+    puts "#{role.movie.title.ljust(21)} #{role.person.name.ljust(20)} #{role.character_name}"
 end
