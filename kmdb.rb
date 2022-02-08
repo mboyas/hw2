@@ -90,9 +90,10 @@ Role.destroy_all
 
 # Last, I added in relevant associations, see below:
 
-# a movie has one director
+# a movie has one director and many roles
 ##class Movie < ApplicationRecord
 ##    belongs_to :person
+##    has_many :roles
 ##end
 
 # each persopn can be in many movies or many roles
