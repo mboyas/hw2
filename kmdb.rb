@@ -96,7 +96,7 @@ Role.destroy_all
 ##    has_many :roles
 ##end
 
-# each persopn can be in many movies or many roles
+# each person can be in many movies or many roles
 ##class Person < ApplicationRecord
 ##    has_many :movies
 ##    has_many :roles
